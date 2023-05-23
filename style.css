@@ -1,0 +1,301 @@
+.vista {
+  position: relative;
+  height: 800px;
+  width: 800px;
+  /* border: 1px solid blue; */
+  /* overflow:hidden; */
+  perspective: 50px;
+  margin:auto;
+  z-index:0;
+}
+
+.panel1{
+  position:absolute;
+  height:300%;
+  width:100%;
+  top:-50%;
+  /* pointer-events: none; */
+}
+.panel2{
+  position:absolute;
+  height:100%;
+  width:25%;
+  /* pointer-events: none; */
+}
+
+.left{
+ 
+ transform-style: preserve-3d;
+  transform: rotateY(90deg)translateZ(-800px);
+  z-index:1;
+  left:-100%;
+  background-color: darkblue;
+
+}
+
+.right {
+
+  transform-style: preserve-3d;
+  transform: rotateY(-90deg)translateZ(-600px);
+  z-index:1;
+  left:100%;
+  background-color: aqua;
+
+}
+.left2{
+  opacity: .5;
+
+ 
+    width:400%;
+    /* border: 1px solid rgb(252, 0, 0);
+    background-color: red; */
+    
+    transform-style: preserve-3d;
+    transform: rotateY(90deg)translateZ(1200px);
+    z-index:-1;
+
+  }
+.top{
+  
+  /* border: 1px solid rgba(3, 255, 79, 0.527);
+  background-color: rgb(81, 255, 0);
+   */
+  transform-style: preserve-3d;
+  transform: rotateX(90deg)translateZ(400px);
+  z-index:1;
+  left:50%;
+
+}
+
+
+.right2 {
+  opacity: .5;
+  width:400%;
+
+  
+  /* border: 1px solid black; */
+  transform-style: preserve-3d;
+  transform: rotateY(90deg)translateZ(800px);
+  z-index:-1;
+
+
+}
+.bottom{
+  
+   /* background-color: rgba(0, 204, 255,.5);
+   */
+  transform-style: preserve-3d;
+  transform: rotateX(-90deg)translateZ(400px);
+  height:100%;
+  width:100%;
+  left:0%;
+  z-index:1;
+   background: gray;
+  z-index: -1;
+
+
+}
+
+.bottom2{
+  opacity: .5;
+
+  width:400%;
+
+  
+
+ transform-style: preserve-3d;
+ transform: rotateX(-90deg)translate3d(0px, 0px, 1000px);
+ z-index:-1;
+
+}
+
+.stripe1{
+  position:absolute;
+  z-index:2;
+  height:10%;
+  width:100%;
+  overflow: hidden;
+  transform:rotate(90deg, 0deg, 90deg);
+  animation:stripe 10s both;
+  font-size: xx-large;
+}
+
+@keyframes stripe{
+  0%{left:100%}
+  100%{left:-300%;visibility:hidden;}
+
+}
+
+.stripe2{
+  z-index:2;
+
+  position:absolute;
+  height:10%;
+  width:100%;
+  background-color:lightyellow;
+  transform:rotate(-90deg);
+  overflow: hidden;
+  animation:stripe2 10s both;
+}
+
+@keyframes stripe2{
+  0%{top:100%}
+  100%{top:-300%;visibility:hidden;}
+
+}
+.stripe3{
+  z-index:2;
+
+  position:absolute;
+  height:300%;
+  width:300%;
+  transform:rotate(90deg, 0deg, 90deg);
+
+  animation:stripe3 10s both;
+  font-size: xx-large;
+}
+
+@keyframes stripe3{
+  0%{left:300%}
+  100%{left:-400%;visibility:hidden;}
+
+}
+body{
+  background-color: black;
+  position:relative;
+  z-index: -1;
+  overflow: hidden;
+}
+
+
+@keyframes openscreen{
+  0%{width:0%}
+  100%{width:80%}
+}
+
+.background{
+  height:100%;
+  width:100%;
+  position:fixed;
+  z-index: -1;
+
+}
+
+.sun{
+  
+  /* border:hotpink 2px solid; */
+  position:relative;
+  margin:auto;
+  padding-top:40%;
+  width:40%;
+  border-radius:50%;
+  animation:sun 120s infinite;
+  z-index:-1;
+
+}
+
+@keyframes sun{
+  0%{top:-150%}
+  100%{top:50%}
+}
+
+.sky{
+  position:relative;
+  height:60%;
+  width:100%;
+  z-index:-1;
+
+}
+
+.skyStripe{
+  position: relative;
+  width:100%;
+  height:4%;
+  z-index:-1;
+
+}
+.ground{
+  position:absolute;
+  top:60%;
+  height:40%;
+  width:100%;
+  background-color: indigo;
+  z-index:-1;
+
+}
+
+.open{
+  text-align:center;
+  position:fixed;
+  z-index:3;
+  width:80%;
+  height:80%;
+  border:5px solid blue;
+  background-color: rgb(106, 106, 248);
+  border-radius:5px;
+  left:10%;
+  top:10%;
+  animation: openscreen .5s both;
+
+}
+.newsImage{
+  height:40%;
+  max-width: 80%;
+  margin:3%;
+
+
+
+}
+.newsImageOpen{
+  
+  animation:imageRise .5s both;
+}
+@keyframes imageRise{
+  0%{transform:translateY(100%)}
+  100%{transform:translateY(0%)}
+}
+.newsText{
+  width:90%;
+  padding:3px;
+  margin:auto;
+  margin-top:3%;
+  background-color: white;
+  border-radius:5px;
+
+}
+.newsTexteOpen{
+  
+  animation:imageRise .5s both;
+}
+.newsTitle{
+  width:100%;
+  font-size: xx-large;
+  padding:2px;
+  text-align:center;
+  color:white;
+  border:1px white solid;
+  border-radius:2px;
+
+}
+.newsTitleOpen{
+  animation:imageRise .5s both;
+}
+.newsLink{
+  width:90%;
+  text-align:center;
+  margin-top:3%;
+  color:white;
+  padding:3px;
+  border-radius:3px;
+}
+.newsLink:hover{
+  background-color: white;
+  color:blue;
+}
+.newsLinkOpen{
+  animation:imageRise .5s both;
+}
+
+.invisibleP{
+  display:none;
+}
