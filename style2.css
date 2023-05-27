@@ -1,0 +1,64 @@
+
+body{
+    display: block
+}
+
+.lot{
+    width:20%;
+    position:relative;
+    height:100vh;
+    float: left;
+    align-content: baseline;
+    
+    
+
+}
+.house1{
+    /* bottom:0px; */
+    position:relative;
+
+}
+.roof1{
+    position:absolute;
+    transform:rotate(45deg);
+      padding-bottom: 100%;
+
+    border-top: 20px  solid;
+    border-left: 20px  solid;
+
+    
+
+}
+/* .roof1:after {
+  
+  display: block;
+  padding-bottom: 100%;
+} */
+.window{
+    position:absolute;
+    border:10px solid;
+    height:20%;
+    top:20%;
+    width:20%;
+
+}
+
+.window:hover{
+    background-color:rgb(174, 242, 65) ! important ;
+}
+
+.windowBarHori{
+width:calc(100% + 5px);
+top:50%;
+left:-2px;
+height:5px;
+position:absolute;
+}
+.windowBarVert{
+height:calc(100% + 5px);
+left:50%;
+top:-2px;
+width:5px;
+position:absolute;
+
+}
