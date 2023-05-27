@@ -4,13 +4,13 @@ body{
 }
 
 .lot{
-    width:30%;
+    width:10%;
     position:relative;
     height:100vh;
     float: left;
     align-content: baseline;
     display: inline-block;
-white-space: nowrap;
+
     
     
 

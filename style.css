@@ -2,8 +2,9 @@
   position: relative;
   height: 800px;
   width: 2800px;
+
   /* border: 1px solid blue; */
-  /* overflow:hidden; */
+  overflow:hidden;
   perspective: 500px;
   margin:auto;
   z-index:0;
@@ -26,15 +27,31 @@
 .left{
  
  transform-style: preserve-3d;
-  transform: rotateY(90deg)translateZ(650px)translateX(1500px)  ;
+  transform: rotateY(90deg)translateZ(650px)translateX(1500px)
+  translateY(20%)  ;
   z-index:1;
   left:-100%;
   overflow: visible;
-  display: inline-block;
+  /* display: inline-block; */
 white-space: nowrap;
   /* background-color: darkblue; */
 
 }
+
+.left2{
+ 
+ transform-style: preserve-3d;
+  transform: rotateY(90deg)translateZ(650px)translateX(1510px)
+  translateY(20%)  ;
+  z-index:1;
+  left:-100%;
+  overflow: visible;
+  /* display: inline-block; */
+white-space: nowrap;
+  background-color: rgba(0, 0, 139, 0.215);
+
+}
+
 
 .right {
 
@@ -45,19 +62,7 @@ white-space: nowrap;
   background-color: aqua;
 
 }
-.left2{
-  opacity: .5;
 
- 
-    width:400%;
-    /* border: 1px solid rgb(252, 0, 0);
-    background-color: red; */
-    
-    transform-style: preserve-3d;
-    transform: rotateY(90deg)translateZ(1200px);
-    z-index:-1;
-
-  }
 .top{
   
   /* border: 1px solid rgba(3, 255, 79, 0.527);
