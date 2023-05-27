@@ -1,10 +1,10 @@
 .vista {
   position: relative;
   height: 800px;
-  width: 800px;
+  width: 2800px;
   /* border: 1px solid blue; */
   /* overflow:hidden; */
-  perspective: 50px;
+  perspective: 500px;
   margin:auto;
   z-index:0;
 }
@@ -26,10 +26,13 @@
 .left{
  
  transform-style: preserve-3d;
-  transform: rotateY(90deg)translateZ(-800px);
+  transform: rotateY(90deg)translateZ(650px)translateX(1500px)  ;
   z-index:1;
   left:-100%;
-  background-color: darkblue;
+  overflow: visible;
+  display: inline-block;
+white-space: nowrap;
+  /* background-color: darkblue; */
 
 }
 

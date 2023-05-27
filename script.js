@@ -31,7 +31,9 @@ house1.css("top", (100-randHeight) + "%")
 
 roof1.css("background-color", chosenColor);
 roof1.css("border-color", roofColor);
-roof1.css("width",Math.sqrt(randWidth^2*2) + "%")
+roof1.css("width",Math.sqrt(5000) + "%")
+roof1.css("padding-bottom",Math.sqrt(5000) + "%")
+
 house1.append(roof1);
 var randWindowNumber = Math.floor(Math.random()*6+2)
 
@@ -58,13 +60,13 @@ for(i=0; i<randWindowNumber; i++){
     var left
     if(i<randWindowNumber/2){
         top=60;
-        left = 34.5*i + 20*i
+        left = 5*(i+1) + 20*(i)
 
 
     }
     else{
         top=20
-       left = 34.5*(i-randWindowNumber/2) + 20*(i-randWindowNumber/2)
+       left = 5*(i-Math.floor(randWindowNumber/2)+1) + 20*(i-randWindowNumber/2)
 
 
     }
@@ -76,7 +78,7 @@ for(i=0; i<randWindowNumber; i++){
 }
 
 lot.append(house1);
-$("body").append(lot)
+$(".left").append(lot)
 }
 
 $("body").keypress(event=>{
