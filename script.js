@@ -14,12 +14,18 @@ const DarkColors = [
 '#041b29','#1a0078','#17010a'
 ]
 const GreenColors = [
-"#23214f",'#2b0a16','#0e3314','#344026','#1e032e',
-'#041b29','#1a0078','#17010a'
+"#66ed59",'#6bb012','#0db34f','#0db34f','#0db34f',
+'#0db34f','#0db34f','#0db34f'
 ]
 function randomDarkColor(){
 var randNumber = Math.floor(Math.random()*(DarkColors.length-1))
     return DarkColors[randNumber]
+
+}
+
+function randomGreenColor(){
+var randNumber = Math.floor(Math.random()*(GreenColors.length-1))
+    return GreenColors[randNumber]
 
 }
 
@@ -28,22 +34,50 @@ function createGarage(houseColor, roofColor){
     var door = $("<div>");
     var roof = $("<div>");
     garage.addClass("garage1")
-
     door.addClass("garageDoor");
     roof.addClass("roof");
-
-
+    door.css("background-color", roofColor)
+    roof.css("background-color", houseColor)
+    roof.css("border-color", roofColor)
+    roof.css("width",Math.sqrt(5000) + "%")
+    roof.css("padding-bottom",Math.sqrt(5000) + "%")
+    garage.append(roof);
+    garage.append(door);
+    return(garage);
 }
 
 function createChimeny(houseColor, roofColor){
 
+    var chimeny = $("<div>");
+    chimeny.addClass("chimeny")
+    chimeny.css("background-color", houseColor);
+    chimeny.css("border-color", roofColor)
+    return chimeny
 }
 
 function createFence(){
+    var fence = $("<div>");
+    fence.addClass("fence");
+    var horizontal = $("<div>");
+    horizontal.addClass("horiFence");
+    for(i=0; i<4;i++ ){
+        var vert = $("<div>");
+        vert.addClass("vertiFence");
+        fence.append(vert);
+    }
+    fence.append(horizontal);
+    return(fence);
 
 }
 
 function createShrub(){
+var shrub = $("<div>");
+shrub.addClass("shrub");
+shrubColor = randomGreenColor();
+shrub.css("background-color", shrubColor);
+var randomLeft = Math.random()*80;
+shrub.css("left", randomLeft);
+return(shrub);
 
 }
 
@@ -191,7 +225,20 @@ for(i=0; i<randWindowNumber; i++){
 
 }
 
+var fence = createFence()
+var shrub = createShrub()
+if(randWidth<100){
+var garage = createGarage(chosenColor, roofColor);
+house1.append(garage);
+}
+var chimeny = createChimeny(chosenColor, roofColor);
+house1.append(chimeny);
+
+
+
 lot.append(house1);
+lot.append(fence)
+lot.append(shrub)
 $(".left").append(lot)
 }
 

@@ -132,7 +132,76 @@ position:absolute;
 }
 
 @keyframes attachWindow2{
-    0%{transform:translateZ(-100px)}
+    0%{transform:translateZ(-20px)}
     100%{transform:translateZ(0px)}
 
+}
+.garage1{
+    position:absolute;
+    height:50%;
+    left:100%;
+    width:50%;
+}
+
+.garageDoor{
+    width: 70%;
+    height:70%;
+    top:30%;
+    position:absolute;
+}
+
+.chimeny{
+    width:30%;
+    height:20%;
+    top:-20%;
+    border-top:20px solid;
+    position: absolute;
+    height: 20%;
+    top: -10%;
+    left: 5%;
+}
+.fence{
+    width:100%; 
+    height:20%;
+    top:80%;
+    position:absolute;
+    animation:fenceAnimation .3s both;
+}
+
+.horiFence{
+
+    width:100%;
+    height:40px;
+    background-color:antiquewhite;
+    position:absolute;
+    top:40%;
+}
+
+.vertiFence{
+
+    width:10%;
+    height:100%;
+    float:left;
+    position:relative;
+    margin-left:10%;
+    background-color:antiquewhite;
+}
+
+.shrub{
+    width:20%;
+    height:30%;
+    position:absolute;
+    top:70%;
+    border-radius: 60% 60% 40% 40%;
+    animation:shrubAnimation .2s both;
+    animation-delay:.3s;
+}
+@keyframes fenceAnimation{
+    0%{transform:translateZ(0)}
+    100%{transform:translateZ(100px)}
+}
+
+@keyframes shrubAnimation{
+    0%{transform:translateZ(50px)translateY(-100px)}
+    100%{transform:translateZ(50px)translateY(0px)}
 }
