@@ -34,15 +34,40 @@ body{
     animation:dropDown .2s linear both
 
 }
-
-.garage1{
+.houseDark{
     /* bottom:0px; */
      transform-style: preserve-3d;
 
     position:relative;
-    animation:dropDown .2s linear both
+    background-color:black;
 
 }
+.garageDark{
+    position:absolute;
+    height:50%;
+    left:100%;
+    width:50%;
+    top:50%;
+    transform-style: preserve-3d;
+    /* position:relative; */
+    animation:dropDown .2s linear both;
+    animation-delay:.2s;
+}
+
+
+.garage1{
+    position:absolute;
+    height:50%;
+    left:100%;
+    width:50%;
+    top:50%;
+    transform-style: preserve-3d;
+    /* position:relative; */
+    animation:dropDown .2s linear both;
+    animation-delay:.2s;
+
+}
+
 .roof1{
     position:absolute;
     transform:translate(20%, -50%) rotate(45deg);
@@ -126,7 +151,7 @@ position:absolute;
 }
 
 @keyframes attachWindow{
-    0%{transform:translateZ(100px)}
+    0%{transform:translateZ(20px)}
     100%{transform:translateZ(0px)}
 
 }
@@ -136,18 +161,15 @@ position:absolute;
     100%{transform:translateZ(0px)}
 
 }
-.garage1{
-    position:absolute;
-    height:50%;
-    left:100%;
-    width:50%;
-}
+
 
 .garageDoor{
     width: 70%;
     height:70%;
     top:30%;
+    left:15%;
     position:absolute;
+    animation:attachWindow .2s both;    
 }
 
 .chimeny{
@@ -182,8 +204,8 @@ position:absolute;
     width:10%;
     height:100%;
     float:left;
+    margin-left:12.5%;
     position:relative;
-    margin-left:10%;
     background-color:antiquewhite;
 }
 

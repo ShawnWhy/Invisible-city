@@ -35,7 +35,8 @@ function createGarage(houseColor, roofColor){
     var roof = $("<div>");
     garage.addClass("garage1")
     door.addClass("garageDoor");
-    roof.addClass("roof");
+    roof.addClass("roof1");
+    garage.css("background-color",houseColor)
     door.css("background-color", roofColor)
     roof.css("background-color", houseColor)
     roof.css("border-color", roofColor)
@@ -52,6 +53,10 @@ function createChimeny(houseColor, roofColor){
     chimeny.addClass("chimeny")
     chimeny.css("background-color", houseColor);
     chimeny.css("border-color", roofColor)
+    var randomChimenyChoose = Math.floor(Math.random()*(10+1))
+    if(randomChimenyChoose%2>0){
+        chimeny.css("left","65%")
+    }
     return chimeny
 }
 
@@ -60,8 +65,11 @@ function createFence(){
     fence.addClass("fence");
     var horizontal = $("<div>");
     horizontal.addClass("horiFence");
-    for(i=0; i<4;i++ ){
+    for(i=0; i<5;i++ ){
         var vert = $("<div>");
+        if(i==0){
+            vert.css('margin-left', '0px')
+        }
         vert.addClass("vertiFence");
         fence.append(vert);
     }
@@ -87,7 +95,7 @@ var lot = $("<div>");
 lot.addClass("lot2");
 var house1 = $("<div>");
 house1.addClass("house1")
-var randWidth = Math.floor(Math.random()*30+50)
+var randWidth = Math.floor(Math.random()*30+40)
 var randHeight = Math.floor(Math.random()*100+80)
 
 var roof1 = $("<div>");
@@ -224,21 +232,33 @@ for(i=0; i<randWindowNumber; i++){
 
 
 }
+var randomNumberExtra = Math.floor(Math.random()*(10+1))
 
-var fence = createFence()
-var shrub = createShrub()
-if(randWidth<100){
+if(randWidth<60){
 var garage = createGarage(chosenColor, roofColor);
 house1.append(garage);
 }
+
+if(randomNumberExtra%2>0){
 var chimeny = createChimeny(chosenColor, roofColor);
-house1.append(chimeny);
+house1.append(chimeny)
+};
+if (randomNumberExtra > 5) {
+ var fence = createFence()
+ lot.append(fence)
+
+};
+if (randomNumberExtra > 7) {
+    var shrub = createShrub()
+    lot.append(shrub)
+
+};
 
 
 
 lot.append(house1);
-lot.append(fence)
-lot.append(shrub)
+
+
 $(".left").append(lot)
 }
 
