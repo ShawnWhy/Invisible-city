@@ -29,6 +29,14 @@ var randNumber = Math.floor(Math.random()*(GreenColors.length-1))
 
 }
 
+function createMagicGate(){
+    var lot = $("<div>")
+    lot.addClass("lot")
+    var gateBody = $("<div>");
+
+
+}
+
 function createGarage(houseColor, roofColor){
     var garage= $("<div>");
     var door = $("<div>");
@@ -141,13 +149,10 @@ for(i=0; i<randWindowNumber; i++){
     if(i<randWindowNumber/2){
         top=60;
         left = 5*(i+1) + 20*(i)
-
-
     }
     else{
         top=20
        left = 5*(i-Math.floor(randWindowNumber/2)+1) + 20*(i-randWindowNumber/2)
-
 
     }
     window.css("top", top + "%")
@@ -258,12 +263,19 @@ if (randomNumberExtra > 7) {
 
 lot.append(house1);
 
+var emptyLot = $("<div>")
+emptyLot.addClass("lot");
+if (randomNumberExtra == 7) {
+        key = createKey()
+        emptyLot.append(key);
 
+}
+$(".left2").append(emptyLot);
 $(".left").append(lot)
 }
 
 function deleteHouse(){
-var Lots = $(".lot")
+var Lots = $(".left .lot")
 if(Lots&&Lots.length>10){
  Lots[0].remove();
     
@@ -274,7 +286,52 @@ if(Lots2&&Lots2.length>10){
  Lots2[0].remove();
 
 }
+var emptyLots = $(".left2 .lot")
+    if (emptyLots && emptyLots.length>10){
+        console.log(emptyLots)
+        emptyLots[0].remove();
+
 }
+}
+
+
+//create portal key
+
+function addToOuter(inner){
+    var random = Math.floor(Math.random()*10)
+    let outer = $("<div>");
+    if(random%2>0){
+    outer.addClass("inner");
+    }
+    else{
+    outer.addClass("inner2");
+
+    }
+    var randcolor = randomColor()
+    outer.css("background-color",randcolor);
+
+    $(outer).append(inner)
+
+    return(outer)
+}
+
+function createKey(){
+var portal = $("<div>");
+let initialInner = $("<div>");
+initialInner.addClass("inner")
+portal.addClass("portal");
+
+for(i=0;i<10; i++){
+    initialInner = addToOuter(initialInner)
+
+}
+
+portal.append(initialInner);
+return portal
+
+}
+createKey();
+
 
 $("body").keypress(event=>{
     event.stopPropagation();
