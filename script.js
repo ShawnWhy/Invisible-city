@@ -29,10 +29,74 @@ var randNumber = Math.floor(Math.random()*(GreenColors.length-1))
 
 }
 
+function rotateMoon(){
+var moon = $(".moon")
+var moonRotation = getRotationDegrees(moon);
+console.log(moonRotation);
+    moonRotation = parseInt(moonRotation)+5;
+    if(moonRotation>360){
+        moonRotation=moonRotation-360;
+    }
+    console.log(moonRotation);
+    moon.css("transform", "rotate(" + moonRotation +"deg)translateY(700%)")
+
+}
+
+function getRotationDegrees(obj) {
+    console.log(obj)
+    var matrix = obj.css("-webkit-transform") ||
+        obj.css("-moz-transform") ||
+        obj.css("-ms-transform") ||
+        obj.css("-o-transform") ||
+        obj.css("transform");
+    if (matrix !== 'none') {
+        console.log("getting degree")
+        var values = matrix.split('(')[1].split(')')[0].split(',');
+        var a = values[0];
+        var b = values[1];
+        var angle = Math.round(Math.atan2(b, a) * (180 / Math.PI));
+    } else { var angle = 0; }
+    console.log(angle);
+    return (angle < 0) ? angle + 360 : angle;
+}
+
+function addStars(location) {
+    for (i = 0; i < 145; i++) {
+        var star = $("<div>");
+        star.addClass('star');
+        var XLen = Math.floor(Math.random() * 100);
+        var YLen = Math.floor(Math.random() * 70)
+        star.css('left', XLen + '%')
+        star.css('top', YLen + '%')
+        $(location).append(star);
+    }
+}
+
+addStars(".sky")
+
 function createMagicGate(){
     var lot = $("<div>")
     lot.addClass("lot")
+    var emptyLot = $("<div>")
+    emptyLot.addClass("lot")
+    var gatebody = $("<div>");
+    gateBody.addClass("gateBody");
+    var doorBehind= $("<div>");
+    doorBehind.addClass("doorBehind");
+    var doorForward = $("<div>");
+    doorForward.addClass("doorForward");
+    
+
+
+
     var gateBody = $("<div>");
+
+    $(".left").append(lot);
+    $(".left2").append(emptyLot);
+    $(".right").append(emptyLot);
+
+
+
 
 
 }
@@ -343,6 +407,7 @@ $("body").keypress(event=>{
         createHouse1();
         createHouse2();
         deleteHouse();
+        rotateMoon();
 
 
     }
