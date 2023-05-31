@@ -259,3 +259,18 @@ position:absolute;
     top:50%;
     transform:rotate(50deg)translateY(700%)
 }
+
+.cl {
+    position:absolute;
+    z-index:10;
+    background-color:black;
+    height:100px;
+    width:100px;
+    left:50%;
+    top:50%;
+    display: block;
+    position: absolute;
+    transform-origin: bottom;
+    -webkit-filter: blur(30px);
+    filter: blur(30px);
+}

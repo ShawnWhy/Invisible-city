@@ -1,3 +1,7 @@
+var gateTriger = "off"
+var newWorld="off"
+var gateNumber = 0;
+
 function randomColor(){
 
     var color;
@@ -82,6 +86,7 @@ function createMagicGate(){
     emptyLot.addClass("lot")
     var gateBody = $("<div>");
     gateBody.addClass("gateBody");
+    gateBody.attr("style", "transform:translateX(0%)translateZ(0px)")
     var doorBehind= $("<div>");
     doorBehind.addClass("doorBehind");
     var doorForward = $("<div>");
@@ -391,6 +396,28 @@ return portal
 }
 createKey();
 
+function gateAnimation1(){
+    
+
+    var transform = $(".gateBody").attr("style")
+    console.log(transform);
+    transform=transform.split("transform:translateX(");
+    transform= transform[1];
+    transform= transform.split(")translateZ(")
+    console.log(transform);
+    var transformX = transform[0].split("%")
+    var transformZ = transform[1].split("px")
+    console.log(transformX)
+    console.log(transformZ)
+    transformX = transformX[0]
+    transformZ = transformZ[0]
+    newX = parseInt(transformX) + 3
+    newZ = parseInt(transformZ) + 100
+    $(".gateBody").attr("style", "transform:translateX("+newX+"%)translateZ("+newZ+"px)")
+    
+
+
+}
 
 $("body").keypress(event=>{
     event.stopPropagation();
@@ -402,7 +429,13 @@ $("body").keypress(event=>{
         createHouse1();
         createHouse2();
         deleteHouse();
+        
         rotateMoon();
+        
+
+        if(gateTriger=="on"){
+            gateAnimation1();
+        }
 
 
     }
@@ -459,7 +492,10 @@ $(document).on("click", ".portal", (e) => {
     e.preventDefault();
     e.stopPropagation();
    
+   if(gateTriger=="off"){
    createMagicGate();
+   gateTriger = "on"
+   }
     // deleteHouse();
     // rotateMoon();
 

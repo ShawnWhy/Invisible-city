@@ -271,14 +271,19 @@ body{
 
 .gateBody{
   /* background-color:black; */
-  border-top:3px solid;
-  border-left:3px solid;
-  border-right:3px solid;
-  position:relative;
-transform: rotateY(105deg)translateX(-1370px);
-  height: 100%;
-  right: 100%;
-  width: 300%;
+ 
+  position:absolute;
+  background-color: black;
+  height: 50%;
+  left: 15%;
+  width:50%;
+  top:25%;
+  /* -webkit-filter: blur(100px);
+   filter: blur(100px); */
+  background:radial-gradient(black,rgba(255, 255, 255, 0) 99%);
+   z-index:20;
+   animation:dropDownGate 1s both;
+  
   /* top: -100%; */
   /* border-color: aqua; */
 
@@ -308,8 +313,15 @@ transform: rotateY(105deg)translateX(-1370px);
  left: 35%;
  top: 30%;
  z-index:2
+}
 
+@keyframes dropDownGate{
+  0% {
+    top:-50%
+  }
 
+  100% {
+top:25%  }
 
 }
 .portal:hover{
