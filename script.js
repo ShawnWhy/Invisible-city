@@ -60,8 +60,8 @@ function getRotationDegrees(obj) {
     return (angle < 0) ? angle + 360 : angle;
 }
 
-function addStars(location) {
-    for (i = 0; i < 145; i++) {
+function addStars(location, number) {
+    for (i = 0; i < number; i++) {
         var star = $("<div>");
         star.addClass('star');
         var XLen = Math.floor(Math.random() * 100);
@@ -72,32 +72,27 @@ function addStars(location) {
     }
 }
 
-addStars(".sky")
+addStars(".sky", 145)
 
 function createMagicGate(){
-    var lot = $("<div>")
-    lot.addClass("lot")
+    console.log("create magic gare");
+    // var lot = $("<div>")
+    // lot.addClass("lot")
     var emptyLot = $("<div>")
     emptyLot.addClass("lot")
-    var gatebody = $("<div>");
+    var gateBody = $("<div>");
     gateBody.addClass("gateBody");
     var doorBehind= $("<div>");
     doorBehind.addClass("doorBehind");
     var doorForward = $("<div>");
     doorForward.addClass("doorForward");
-    
-
-
-
-    var gateBody = $("<div>");
-
-    $(".left").append(lot);
-    $(".left2").append(emptyLot);
-    $(".right").append(emptyLot);
-
-
-
-
+    gateBody.append(doorBehind);
+    gateBody.append(doorForward);
+    $(".vista").append(gateBody);
+    // $(".left").append(lot);
+    addStars('.doorBehind', 20)
+    // $(".left2").append(emptyLot);
+    // $(".right").append(emptyLot);
 
 }
 
@@ -415,6 +410,30 @@ $("body").keypress(event=>{
 
 })
 
+
+// $('.left').on('mouseleave', (e) => {
+//     if ($(e.target).hasClass('left')) {
+//         $(e.target).css("pointer-events", "unset")
+
+//     }
+// })
+
+$('.left').on('mouseover',(e)=>{
+    if($(e.target).hasClass('left')){
+        $(e.target).css("pointer-events", "none")
+   
+    setTimeout(() => {
+        $(e.target).css("pointer-events", "unset")
+
+    }, 500);
+    }
+})
+
+
+
+
+
+
 $(document).on("click",".lot",(e)=>{
 e.preventDefault();
 e.stopPropagation();
@@ -433,6 +452,16 @@ console.log(flop)
 if($(flop).hasClass("house1")){
     console.log($(flop).parent())
 $(flop).parent().addClass("houseFlop")};
+
+})
+$(document).on("click", ".portal", (e) => {
+    console.log("click portal")
+    e.preventDefault();
+    e.stopPropagation();
+   
+   createMagicGate();
+    // deleteHouse();
+    // rotateMoon();
 
 })
 // 

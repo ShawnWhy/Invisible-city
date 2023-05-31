@@ -25,7 +25,7 @@
 }
 
 .left{
- 
+pointer-events: visible;
  transform-style: preserve-3d;
   transform: rotateY(70deg)translateZ(650px)translateX(1500px)
   translateY(20%)  ;
@@ -262,66 +262,58 @@ body{
   
   animation:imageRise .5s both;
 }
-@keyframes imageRise{
-  0%{transform:translateY(100%)}
-  100%{transform:translateY(0%)}
-}
-.newsText{
-  width:90%;
-  padding:3px;
-  margin:auto;
-  margin-top:3%;
-  background-color: white;
-  border-radius:5px;
 
-}
-.newsTexteOpen{
-  
-  animation:imageRise .5s both;
-}
-.newsTitle{
-  width:100%;
-  font-size: xx-large;
-  padding:2px;
-  text-align:center;
-  color:white;
-  border:1px white solid;
-  border-radius:2px;
 
-}
-.newsTitleOpen{
-  animation:imageRise .5s both;
-}
-.newsLink{
-  width:90%;
-  text-align:center;
-  margin-top:3%;
-  color:white;
-  padding:3px;
-  border-radius:3px;
-}
-.newsLink:hover{
-  background-color: white;
-  color:blue;
-}
-.newsLinkOpen{
-  animation:imageRise .5s both;
-}
 
 .invisibleP{
   display:none;
 }
 
 .gateBody{
-  backround-color:black;
+  /* background-color:black; */
+  border-top:3px solid;
+  border-left:3px solid;
+  border-right:3px solid;
+  position:relative;
+transform: rotateY(105deg)translateX(-1370px);
+  height: 100%;
+  right: 100%;
+  width: 300%;
+  /* top: -100%; */
+  /* border-color: aqua; */
+
 
 }
-.gate{
+.doorBehind{
+  position:absolute;
+  width:30%;
+  height:70%;
+  border-radius:50% 50% 0 0;
+  border-top: 6px solid;
+  border-left: 6px solid;
+  border-right: 6px solid;
+  background-color:black;
+  z-index:1;
+  left:35%;
+  top:30%;
 
 }
-.gateBehind{
+.gateForward{
+  position:absolute;
+  width: 30%;
+  height: 70%;
+  border-radius: 50% 50% 0 0;
+  background-color:aquamarine;
+  z-index:2;
+ left: 35%;
+ top: 30%;
+ z-index:2
 
 
+
+}
+.portal:hover{
+  background-color: aqua;
 }
 
 .portal{
