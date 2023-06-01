@@ -396,6 +396,19 @@ return portal
 }
 createKey();
 
+function AnotherWorldTrigger(){
+
+    $('.left').html("")
+    $('.left2').html("")
+    $(".right").html("")
+    $(".gateBody").remove()
+    $(".bottom").css("background-color","black");
+    $(".ground").css("background-color","black");
+    $(".moon").css("background-color","black");
+
+
+}
+
 function gateAnimation1(){
     
 
@@ -434,6 +447,12 @@ $("body").keypress(event=>{
         
 
         if(gateTriger=="on"){
+            gateNumber+=1
+            if(gateNumber>=5){
+                gateTriger="off";
+                AnotherWorldTrigger();
+            }
+
             gateAnimation1();
         }
 
