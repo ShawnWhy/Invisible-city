@@ -37,22 +37,51 @@ body{
 .houseDark{
     /* bottom:0px; */
      transform-style: preserve-3d;
+    border-left: 3px solid;
+     border-right: 3px solid;
 
     position:relative;
     background-color:black;
+   transform-origin: bottom;
+   animation: flipUp .5s both;
+   
 
 }
-.garageDark{
-    position:absolute;
-    height:50%;
-    left:100%;
-    width:50%;
-    top:50%;
-    transform-style: preserve-3d;
-    /* position:relative; */
-    animation:dropDown .2s linear both;
-    animation-delay:.2s;
+.chimenyDark{
+    border-left:3px solid;
+    border-right:3px solid
 }
+.garageDark{
+    border-left: 3px solid;
+    border-right: 3px solid;
+}
+.garageDoorDark {
+    border-left: 3px solid;
+    border-right: 3px solid;
+    border-top: 3px solid;
+}
+.fenceDark{
+    border:3px solid;
+    background-color: black ! important;
+
+}
+
+.windowDark{
+        border: 3px solid
+
+}
+
+@keyframes flipUp {
+    0% {
+        transform: rotateX(90deg)
+    }
+
+    100% {
+        transform: rotateX(0deg)
+    }
+
+}
+
 
 
 .garage1{
@@ -273,4 +302,9 @@ position:absolute;
     transform-origin: bottom;
     -webkit-filter: blur(30px);
     filter: blur(30px);
+}
+
+.floorLine{
+    width:100%;
+    height:1%;
 }

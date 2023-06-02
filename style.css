@@ -368,6 +368,17 @@ top:25%  }
   animation:rotatePortal2 2s linear infinite;
 
 }
+
+.inner3 {
+  position: relative;
+  border-radius: 50%;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+
+}
+
 @keyframes rotatePortal {
   0% {
       transform: rotateZ(0deg);
